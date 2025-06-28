@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to Ristorante delle Powerpuff Girls</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Welcome to Ristorante delle Powerpuff Girls</div>
+            <nav>
+                <button onclick="navigate('home')">Home</button>
+                <button onclick="navigate('menu')">Menu</button>
+                <button onclick="navigate('about')">About Us</button>
+                <button onclick="navigate('contact')">Contact Us</button>
+                <button onclick="navigate('reservation')">Make a Reservation</button>
+                <button onclick="navigate('customers')"> Customer Registration</button>
+                <button onclick="navigate('orders')">Online Orders</button>
+                <button onclick="loadReviews()">Show Reviews</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero home" id="home">
+        <div class="hero-content">
+            <h1>Authentic Flavours,<br> Timeless Traditions</h1>
+            <p>Delicious meals cooked with love and tradition</p>
+            <button class='btn' onclick="navigate('menu')">Explore Menu</button>
+        </div>
+    </section>
+
+    <section class="menu-section hidden" id="menu">
+        <h2>Our Menu</h2>
+   
+        <!-- PIZZA -->
+        <div class="menu-category">
+            <h3>Pizza</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Margherita Pizza - Rs 2800</h4>
+                    <p>Classic pizza with fresh tomato sauce and mozzarella</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Pepperoni Pizza - Rs 3600</h4>
+                    <p>Pizza topped with spicy pepperoni slices and mozzarella cheese</p>
+                </div>
+                <div class="menu-item">
+                    <h4>BBQ Chicken Pizza - Rs 3900</h4>
+                    <p>Grilled chicken, BBQ sauce, onions, and cheddar cheese</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Veggie Delight Pizza - Rs 3400</h4>
+                    <p>Tomato sauce, mushrooms, bell peppers, olives, and mozzarella</p>
+                </div>
+            </div>
+        </div>
+   
+        <!-- BURGER -->
+        <div class="menu-category">
+            <h3>Burgers</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Classic Cheeseburger - Rs 2500</h4>
+                    <p>Beef patty with cheddar cheese, lettuce, tomato, and house sauce</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Bacon Burger - Rs 2300</h4>
+                    <p>Juicy beef patty with crispy bacon, cheese, and BBQ sauce</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Spicy Chicken Burger - Rs 2200</h4>
+                    <p>Crispy chicken fillet with spicy mayo, lettuce, and pickles</p>
+                </div>
+            </div>
+        </div>
+   
+        <!-- PASTA -->
+        <div class="menu-category">
+            <h3>Pasta</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Spaghetti Bolognese - Rs 3000</h4>
+                    <p>Traditional Italian pasta with slow-cooked beef and tomato sauce</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Chicken Alfredo - Rs 2800</h4>
+                    <p>Creamy Alfredo sauce with grilled chicken over fettuccine pasta</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Penne Arrabbiata - Rs 2600</h4>
+                    <p>Penne pasta tossed in a spicy tomato garlic sauce</p>
+                </div>
+            </div>
+        </div>
+   
+        <!-- SALAD -->
+        <div class="menu-category">
+            <h3>Salads</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Caesar Salad - Rs 1500</h4>
+                    <p>Fresh romaine lettuce, Caesar dressing, croutons, and parmesan cheese</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Greek Salad - Rs 1600</h4>
+                    <p>Cucumber, tomatoes, olives, feta cheese, and lemon-olive oil dressing</p>
+                </div>
+            </div>
+        </div>
+   
+        <!-- APPETIZER -->
+        <div class="menu-category">
+            <h3>Appetizers</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Mozzarella Sticks - Rs 1500</h4>
+                    <p>Crispy fried mozzarella cheese sticks served with marinara sauce</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Garlic Bread - Rs 1300</h4>
+                    <p>Toasted bread with garlic butter and herbs</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Buffalo Wings - Rs 1000</h4>
+                    <p>Spicy buffalo chicken wings with ranch dip</p>
+                </div>
+            </div>
+        </div>
+   
+        <!-- BEVERAGES -->
+        <div class="menu-category">
+            <h3>Beverages</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Coca-Cola - Rs 600</h4>
+                    <p>Chilled Coca-Cola soft drink (500ml)</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Fresh Lemonade - Rs 1000</h4>
+                    <p>Homemade lemonade with fresh lemons and mint</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Espresso - Rs 800</h4>
+                    <p>Strong and bold espresso shot</p>
+                </div>
+            </div>
+        </div>
+   
+        <!-- DESSERTS -->
+        <div class="menu-category">
+            <h3>Desserts</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Chocolate Cake - Rs 1600</h4>
+                    <p>Rich and moist chocolate cake with fudge frosting</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Cheesecake - Rs 1800</h4>
+                    <p>Classic New York-style cheesecake with a graham cracker crust</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Tiramisu - Rs 2000</h4>
+                    <p>Italian coffee-flavored dessert with mascarpone and cocoa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="about">
+        <h2>About Us</h2>
+        <p>We bring authentic taste and traditional recipes to your table. Inspired by flavors from the subcontinent, our chefs craft every dish with care and passion.</p>
+    </section>
+
+
+    <section class="customer-section hidden" id="customers">
+        <h2>Add Customer</h2>
+
+     <form id="customerForm" method="post" action="/addCustomer">
+
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br><br>
+
+   <label for="phone_number">Phone Number:</label>
+   <input type="tel" id="phone_number" name="phone_number" required><br><br>
+
+   <label for="email">Email:</label>
+   <input type="email" id="email" name="email" required><br><br>
+
+   <button type="submit">Add Customer</button>
+</form>
+
+    </section>
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@RistoranteDelle.com</p>
+        <p>Phone: 123-456-7890</p>
+    </section>
+
+
+    <section class="reservation-section" id="reservation">
+        <h2>Make a Reservation</h2>
+        <form id="reservationForm">
+    
+            <!-- Customer Information -->
+            <label for="customerId">Customer ID:</label>
+            <input type="number" id="customerId" required><br>
+    
+            <!-- Reservation Information -->
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" min="1" required><br>
+            <small>Indoor:4, Outdoor:6, Vip: 2</small>
+    
+            <label for="date">Date:</label>
+            <input type="date" id="date" required><br>
+    
+            <label for="time">Time:</label>
+            <input type="time" id="time" required><br>
+            <small>Reservations allowed from 10:00 AM to 10:00 PM.</small><br>
+    
+            <!-- Location Selection -->
+            <label for="location">Location:</label>
+            <select id="location" required>
+                <option value="">Select Location</option>
+                <option value="indoor">Indoor</option>
+                <option value="outdoor">Outdoor</option>
+                <option value="vip">VIP</option>
+            </select><br>
+    
+            <!-- Optional Special Requests -->
+            <label for="specialRequests">Special Requests:</label>
+            <textarea id="specialRequests"></textarea><br>
+    
+            <!-- Status (auto-set to 'pending') -->
+            <input type="hidden" id="status" value="pending">
+    
+            <button type="submit" class="btn">Reserve Now</button>
+        </form>
+        <div id="confirmationMessage" style="margin-top: 20px; font-weight: bold;"></div>    
+    </section>
+    
+   
+
+
+    <section class="order-section" id="orders">
+        <h2>Place Your Online Order</h2>
+    
+        <div id="order-menu">
+            <h3>Select Items</h3>
+            <!-- Pizza -->
+        <div class="order-item">
+            <p>Margherita Pizza - $9.99</p>
+            <button onclick="addToCart('Margherita Pizza', 9.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Pepperoni Pizza - $12.99</p>
+            <button onclick="addToCart('Pepperoni Pizza', 12.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>BBQ Chicken Pizza - $13.99</p>
+            <button onclick="addToCart('BBQ Chicken Pizza', 13.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Veggie Delight Pizza - $11.99</p>
+            <button onclick="addToCart('Veggie Delight Pizza', 11.99)">Add to Cart</button>
+        </div>
+
+        <!-- Burgers -->
+        <div class="order-item">
+            <p>Classic Cheeseburger - $8.99</p>
+            <button onclick="addToCart('Classic Cheeseburger', 8.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Bacon Burger - $10.49</p>
+            <button onclick="addToCart('Bacon Burger', 10.49)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Spicy Chicken Burger - $9.99</p>
+            <button onclick="addToCart('Spicy Chicken Burger', 9.99)">Add to Cart</button>
+        </div>
+
+        <!-- Pasta -->
+        <div class="order-item">
+            <p>Spaghetti Bolognese - $10.99</p>
+            <button onclick="addToCart('Spaghetti Bolognese', 10.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Chicken Alfredo - $12.49</p>
+            <button onclick="addToCart('Chicken Alfredo', 12.49)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Penne Arrabbiata - $9.49</p>
+            <button onclick="addToCart('Penne Arrabbiata', 9.49)">Add to Cart</button>
+        </div>
+
+        <!-- Salads -->
+        <div class="order-item">
+            <p>Caesar Salad - $7.99</p>
+            <button onclick="addToCart('Caesar Salad', 7.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Greek Salad - $8.49</p>
+            <button onclick="addToCart('Greek Salad', 8.49)">Add to Cart</button>
+        </div>
+
+        <!-- Appetizers -->
+        <div class="order-item">
+            <p>Mozzarella Sticks - $6.99</p>
+            <button onclick="addToCart('Mozzarella Sticks', 6.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Garlic Bread - $4.99</p>
+            <button onclick="addToCart('Garlic Bread', 4.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Buffalo Wings - $9.49</p>
+            <button onclick="addToCart('Buffalo Wings', 9.49)">Add to Cart</button>
+        </div>
+
+        <!-- Beverages -->
+        <div class="order-item">
+            <p>Coca-Cola - $2.49</p>
+            <button onclick="addToCart('Coca-Cola', 2.49)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Fresh Lemonade - $3.99</p>
+            <button onclick="addToCart('Fresh Lemonade', 3.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Espresso - $2.99</p>
+            <button onclick="addToCart('Espresso', 2.99)">Add to Cart</button>
+        </div>
+
+        <!-- Desserts -->
+        <div class="order-item">
+            <p>Chocolate Cake - $5.99</p>
+            <button onclick="addToCart('Chocolate Cake', 5.99)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Cheesecake - $6.49</p>
+            <button onclick="addToCart('Cheesecake', 6.49)">Add to Cart</button>
+        </div>
+        <div class="order-item">
+            <p>Tiramisu - $6.99</p>
+            <button onclick="addToCart('Tiramisu', 6.99)">Add to Cart</button>
+        </div>
+        </div>
+
+        
+        <div id="cartDisplay">
+            <h3>Your Cart</h3>
+            <ul id="cartItems"></ul>
+            <p>Total: $<span id="cartTotal">0.00</span></p>
+            <h3>Proceeding to Delivery Details</h3>
+            <button onclick="showDeliveryForm()">Proceed to Delivery</button>
+            
+            
+
+           
+        </div>
+    
+        <div id="deliveryFormContainer" class="hidden">
+            <h3>Delivery Information</h3>
+            <form id="orderForm" onsubmit="placeOrder(event)">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" placeholder="Enter full name (First and Last Name)" required><br><br>
+        
+                <label for="address">Delivery Address:</label><br>
+                <input type="text" id="address" placeholder="Enter delivery address" required><br><br>
+        
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" placeholder="Enter phone number" required><br><br>
+        
+                <button type="submit">Proceed to Checkout</button>
+            </form>
+        </div>
+
+        <div id="orderConfirmation" class="hidden">
+            <h3>Order Placed!</h3>
+            <p>Thank you for your order. It will be delivered shortly.</p>
+        </div>
+    </section>
+
+
+
+<section class="reviews-section hidden" id="reviews">
+    <div class="reviews-container">
+        <h2>Customer Reviews</h2>
+       
+        <!-- Reviews will be loaded here dynamically -->
+        <div id="reviewsList" class="reviews-list"></div>
+       
+        <!-- Add Review Form -->
+        <div class="add-review">
+            <h3>Leave Your Review</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewCustomerId">Customer ID:</label>
+                    <input type="number" id="reviewCustomerId" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewOrderId">Order ID (optional):</label>
+                    <input type="number" id="reviewOrderId">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewReservationId">Reservation ID (optional):</label>
+                    <input type="number" id="reviewReservationId">
+                </div>
+                
+                <div class="form-group">
+                    <label>Rating:</label>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        <label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">★</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewComment">Your Review:</label>
+                    <textarea id="reviewComment" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Submit Review</button>
+            </form>
+        </div>
+    </div>
+</section>
+   
+    <script src="script.js"></script>
+</body>
+</html>
